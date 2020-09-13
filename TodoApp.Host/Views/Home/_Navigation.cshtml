@@ -1,0 +1,44 @@
+﻿@model TodoApp.Host.Models.IndexViewModel
+
+<div class="row mb-sm-2 no-gutters">
+    <form action="/Home/Index" class="form-inline col-6">
+        <input name="isCompleted" value="@(Model.IsCompleted == true ? "true" : (Model.IsCompleted == false ? "false" : "null"))" type="hidden" />
+        <input value="@Model.SearchString"
+               class="form-control mr-sm-2"
+               type="search"
+               name="searchString"
+               placeholder="Search"
+               aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+    <form action="/Home/AddTodo" class="form-inline col-6 justify-content-end" method="post">
+        <input name="page" value="@Model.Page" type="hidden" />
+        <input name="pageSize" value="@Model.PageSize" type="hidden" />
+        <input name="searchString" value="@Model.SearchString" type="hidden" />
+        <input name="isCompleted" value="@(Model.IsCompleted == true ? "true" : (Model.IsCompleted == false ? "false" : "null"))" type="hidden" />
+        <input type="text" class="form-control mr-sm-2 min descriptionInput" name="newItemDescription" placeholder="Enter new TODO description">
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Add TODO</button>
+    </form>
+</div>
+
+<div class="row mb-sm-2">
+    <form action="/Home/Index" class="ml-3">
+        <input name="pageSize" value="@Model.PageSize" type="hidden" />
+        <input name="searchString" value="@Model.SearchString" type="hidden" />
+        <input name="isCompleted" value="null" type="hidden" />
+        <button type="submit" class="btn btn-secondary @(Model.IsCompleted == null ? "active" : "")">All</button>
+    </form>
+    <form action="/Home/Index" class="ml-1">
+        <input name="pageSize" value="@Model.PageSize" type="hidden" />
+        <input name="searchString" value="@Model.SearchString" type="hidden" />
+        <input name="isCompleted" value="true" type="hidden" />
+        <button type="submit" class="btn btn-secondary @(Model.IsCompleted == true ? "active": "")">Completed</button>
+    </form>
+    <form action="/Home/Index" class="ml-1">
+        <input name="pageSize" value="@Model.PageSize" type="hidden" />
+        <input name="searchString" value="@Model.SearchString" type="hidden" />
+        <input name="isCompleted" value="false" type="hidden" />
+        <button type="submit" class="btn btn-secondary @(Model.IsCompleted == false ? "active" : "")">Active</button>
+    </form>
+</div>

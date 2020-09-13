@@ -1,0 +1,41 @@
+﻿@model TodoApp.Host.Models.IndexViewModel
+
+@if (Model.TotalNumberOfItems > Model.PageSize)
+{
+    <footer class="page-footer font-small blue pt-4">
+        <nav>
+            <div class="pagination">
+                <form action="/Home/Index" method="get">
+                    <input name="page" value="@(Model.Page-1)" type="hidden" />
+                    <input name="pageSize" value="@Model.PageSize" type="hidden" />
+                    <input name="searchString" value="@Model.SearchString" type="hidden" />
+                    <input name="isCompleted" value="@Model.IsCompleted" type="hidden" />
+                    <button class="page-item page-link" type="submit">
+                        <span aria-hidden="true">&laquo;</span>
+                    </button>
+                </form>
+
+                @for (int pageNumber = 0; pageNumber * Model.PageSize <= Model.TotalNumberOfItems; pageNumber++)
+                {
+                    <form action="/Home/Index" method="get">
+                        <input name="page" value="@(pageNumber)" type="hidden" />
+                        <input name="pageSize" value="@Model.PageSize" type="hidden" />
+                        <input name="searchString" value="@Model.SearchString" type="hidden" />
+                        <input name="isCompleted" value="@Model.IsCompleted" type="hidden" />
+                        <button class="page-item page-link" type="submit">@(pageNumber+1)</button>
+                    </form>
+                }
+
+                <form action="/Home/Index" method="get">
+                    <input name="page" value="@(Model.Page >= (Model.TotalNumberOfItems / Model.PageSize) ? Model.Page : Model.Page+1)" type="hidden" />
+                    <input name="pageSize" value="@Model.PageSize" type="hidden" />
+                    <input name="searchString" value="@Model.SearchString" type="hidden" />
+                    <input name="isCompleted" value="@Model.IsCompleted" type="hidden" />
+                    <button class="page-item page-link" type="submit">
+                        <span aria-hidden="true">&raquo;</span>
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </footer>
+}

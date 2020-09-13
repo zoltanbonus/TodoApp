@@ -1,0 +1,65 @@
+﻿@model TodoApp.Host.Models.IndexViewModel
+@using TodoApp.Model.Database
+
+<div class="container">
+    @foreach (TodoItem todo in Model.TodoItems)
+    {
+        <div class="row todoItemRow">
+            <button type="button"
+                    name="@(!todo.IsCompleted ? "edit-button-"+todo.Id : "")"
+                    @(todo.IsCompleted ? "disabled" : "")
+                    onclick="onEditButtonClick(@todo.Id)"
+                    class="btn btn-primary btn-sm rounded-0 todoItemButton">
+                <i class="fa fa-edit"></i>
+            </button>
+
+            <button type="button"
+                    name="save-button-@todo.Id"
+                    onclick="onSaveButtonClick(@todo.Id)"
+                    class="btn btn-success btn-sm rounded-0 todoItemButton"
+                    style="display: none;">
+                <i class="fa fa-save"></i>
+            </button>
+
+            <button type="button"
+                    name="cancel-edit-button-@todo.Id"
+                    onclick="onCancelEditButtonClick(@todo.Id)"
+                    class="btn btn-warning btn-sm rounded-0 todoItemButton"
+                    style="display: none;">
+                <i class="fa fa-times"></i>
+            </button>
+
+            <button type="button"
+                    class="btn btn-danger btn-sm rounded-0 todoItemButton"
+                    name="delete-button-@todo.Id"
+                    data-toggle="modal"
+                    data-todo-id="@todo.Id"
+                    data-target="#deleteTodoModal">
+                <i class="fa fa-trash"></i>
+            </button>
+
+            <form action="/Home/CompleteTodo" method="post">
+                <input type="hidden" name="id" value="@todo.Id" />
+                <input name="page" value="@(Model.Page)" type="hidden" />
+                <input name="pageSize" value="@Model.PageSize" type="hidden" />
+                <input name="searchString" value="@Model.SearchString" type="hidden" />
+                <input name="isCompleted" value="@(Model.IsCompleted == true ? "true" : (Model.IsCompleted == false ? "false" : "null"))" type="hidden" />
+
+                <button type="submit"
+                        class="btn btn-success btn-sm rounded-0 todoItemButton ml-3"
+                        name="@(!todo.IsCompleted ? "complete-button-"+todo.Id : "")"
+                        @(todo.IsCompleted ? "disabled" : "")>
+                    <i class="fa fa-check"></i>
+                </button>
+
+                <label data-todo-id="@todo.Id" for="@todo.Id">@todo.Description</label>
+                <input type="text"
+                       name="edit-todo-description-@todo.Id"
+                       data-todo-id="@todo.Id"
+                       value="@todo.Description"
+                       style="display: none;"
+                       class="form-control-sm descriptionInput" />
+            </form>
+        </div>
+    }
+</div>

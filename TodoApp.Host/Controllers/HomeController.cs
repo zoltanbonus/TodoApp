@@ -39,12 +39,12 @@ namespace TodoApp.Host.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddTodo(string newItemDescription)
+        public IActionResult AddTodo(string newItemDescription, string searchString, bool? isCompleted, int page, int pageSize)
         {
             try
             {
                 todoItemService.CreateTodoItem(this.HttpContext.User.Identity.Name, newItemDescription);
-                return RedirectToAction("Index");
+                return Index(searchString, isCompleted, page, pageSize);
             }
             catch (Exception ex)
             {
