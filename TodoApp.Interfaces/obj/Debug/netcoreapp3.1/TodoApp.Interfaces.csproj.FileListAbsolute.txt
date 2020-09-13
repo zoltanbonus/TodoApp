@@ -1,0 +1,12 @@
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Interfaces\bin\Debug\netcoreapp3.1\TodoApp.Interfaces.deps.json
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Interfaces\bin\Debug\netcoreapp3.1\TodoApp.Interfaces.dll
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Interfaces\bin\Debug\netcoreapp3.1\TodoApp.Interfaces.pdb
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Interfaces\obj\Debug\netcoreapp3.1\TodoApp.Interfaces.csprojAssemblyReference.cache
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Interfaces\obj\Debug\netcoreapp3.1\TodoApp.Interfaces.AssemblyInfoInputs.cache
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Interfaces\obj\Debug\netcoreapp3.1\TodoApp.Interfaces.AssemblyInfo.cs
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Interfaces\obj\Debug\netcoreapp3.1\TodoApp.Interfaces.dll
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Interfaces\obj\Debug\netcoreapp3.1\TodoApp.Interfaces.pdb
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Interfaces\bin\Debug\netcoreapp3.1\TodoApp.Model.dll
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Interfaces\bin\Debug\netcoreapp3.1\TodoApp.Model.pdb
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Interfaces\obj\Debug\netcoreapp3.1\TodoApp.Interfaces.csproj.CopyComplete
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Interfaces\obj\Debug\netcoreapp3.1\TodoApp.Interfaces.csproj.CoreCompileInputs.cache

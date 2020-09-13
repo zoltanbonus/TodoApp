@@ -1,0 +1,14 @@
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Database\bin\Debug\netcoreapp3.1\TodoApp.Database.deps.json
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Database\bin\Debug\netcoreapp3.1\TodoApp.Database.dll
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Database\obj\Debug\netcoreapp3.1\TodoApp.Database.AssemblyInfoInputs.cache
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Database\obj\Debug\netcoreapp3.1\TodoApp.Database.AssemblyInfo.cs
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Database\bin\Debug\netcoreapp3.1\TodoApp.Database.pdb
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Database\bin\Debug\netcoreapp3.1\TodoApp.Model.dll
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Database\bin\Debug\netcoreapp3.1\TodoApp.Model.pdb
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Database\obj\Debug\netcoreapp3.1\TodoApp.Database.csprojAssemblyReference.cache
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Database\obj\Debug\netcoreapp3.1\TodoApp.Database.csproj.CoreCompileInputs.cache
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Database\obj\Debug\netcoreapp3.1\TodoApp.Database.csproj.CopyComplete
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Database\obj\Debug\netcoreapp3.1\TodoApp.Database.dll
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Database\obj\Debug\netcoreapp3.1\TodoApp.Database.pdb
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Database\bin\Debug\netcoreapp3.1\TodoApp.Interfaces.dll
+C:\Users\Zoltan\source\repos\TodoApp\TodoApp.Database\bin\Debug\netcoreapp3.1\TodoApp.Interfaces.pdb
