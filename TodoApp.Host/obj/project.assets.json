@@ -1441,10 +1441,7 @@
         },
         "runtime": {
           "bin/placeholder/TodoApp.Database.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "TodoApp.Interfaces/1.0.0": {
         "type": "project",
