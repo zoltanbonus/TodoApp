@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Diagnostics;
 using TodoApp.Host.Models;
 using TodoApp.Interfaces.Services;
-using TodoApp.Model.Database;
 
 namespace TodoApp.Host.Controllers
 {
@@ -48,8 +44,8 @@ namespace TodoApp.Host.Controllers
             }
             catch (Exception ex)
             {
-                // TODO add logging
-                return RedirectToAction("Index");
+                _logger.LogError(ex.Message);
+                return Error();
             }
         }
 
@@ -63,7 +59,8 @@ namespace TodoApp.Host.Controllers
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Index");
+                _logger.LogError(ex.Message);
+                return Error();
             }
         }
 
@@ -77,7 +74,8 @@ namespace TodoApp.Host.Controllers
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Index");
+                _logger.LogError(ex.Message);
+                return Error();
             }
         }
 
@@ -87,18 +85,19 @@ namespace TodoApp.Host.Controllers
             try
             {
                 todoItemService.UpdateTodoDescription(id, description);
-                return new JsonResult("OK");
+                return new JsonResult(Constants.SuccessJsonResultText);
             }
             catch (Exception ex)
             {
-                return new JsonResult("ERROR");
+                _logger.LogError(ex.Message);
+                return new JsonResult(Constants.ErrorJsonResultText);
             }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
