@@ -57,59 +57,6 @@ namespace TodoApp.Services
             dbContext.SaveChanges();
         }
 
-        public IEnumerable<TodoItem> GetTodoItems(string userName, int page, int pageSize)
-        {
-            return dbContext.TodoItems
-                .Where(todo => todo.UserName == userName)
-                .Skip(page * pageSize)
-                .Take(pageSize)
-                .ToList();
-        }
-
-        public int GetTodoItemCount(string userName)
-        {
-            return dbContext.TodoItems
-                .Where(todo => todo.UserName == userName)
-                .Count();
-        }
-
-        public IEnumerable<TodoItem> GetTodoItems(string userName, int page, int pageSize, bool isCompleted)
-        {
-            return dbContext.TodoItems
-                .Where(todo => todo.UserName == userName && todo.IsCompleted == isCompleted)
-                .Skip(page * pageSize)
-                .Take(pageSize)
-                .ToList();
-        }
-
-        public int GetTodoItemCount(string userName, bool isCompleted)
-        {
-            return dbContext.TodoItems
-                .Where(todo => todo.UserName == userName && todo.IsCompleted == isCompleted)
-                .Count();
-        }
-
-        public IEnumerable<TodoItem> SearchTodoItems(string userName, int page, int pageSize, string searchString)
-        {
-            if (string.IsNullOrEmpty(searchString))
-            {
-                return GetTodoItems(userName, page, pageSize);
-            }
-
-            return dbContext.TodoItems
-                .Where(todo => todo.UserName == userName && todo.Description.ToLower().Contains(searchString.ToLower()))
-                .Skip(page * pageSize)
-                .Take(pageSize)
-                .ToList();
-        }
-
-        public int GetTodoItemCount(string userName, string searchString)
-        {
-            return dbContext.TodoItems
-                .Where(todo => todo.UserName == userName && todo.Description.ToLower().Contains(searchString.ToLower()))
-                .Count();
-        }
-
         public void UpdateTodoDescription(int id, string description)
         {
             TodoItem todoItem = dbContext.TodoItems.FirstOrDefault(todo => todo.Id == id);
